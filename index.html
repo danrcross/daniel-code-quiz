@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width"/>
+        <title>Coding Quiz Challenge</title>
+        <link rel="stylesheet" href="assets/css/style.css"/>
+    </head>
+    <body>
+        <header>
+            <p id="score-link">View High Scores</p>
+            <p id="time-counter">Time: 60</p>
+        </header>
+        <section id="main-page">
+            <h1 id="main-title">Coding Quiz Challenge</h1>
+            <p id="description">A timed and scored challenge to test your JavaScript knowledge.</p>
+            <button id="begin">Begin Quiz</button>
+        </section>
+        <section id="question-page">
+            <h2 id="quiz-question" data-q1="2+2=?" data-q1a="4" data-q2="3+3=?" data-q2a="6" data-q3="4+4=?" data-q3a="8"> </h2>
+            <ol id="response-items">
+                <li id="item1" data-q1="1" data-q2="2" data-q3="2"> </li>
+                <li id="item2" data-q1="2" data-q2="4" data-q3="4"> </li>
+                <li id="item3" data-q1="3" data-q2="6" data-q3="6"> </li>
+                <li id="item4" data-q1="4" data-q2="8" data-q3="8"> </li>
+            </ol>
+        </section>
+        <section id="score">
+            <h2> Great work!</h2>
+            <h3 id="finalscore"></h3>
+        </section>
+        <section id="feedback">
+            <h3 id="in-correct" data-correct="Correct!" data-incorrect="Incorrect!"></h3>
+        </section>          
+
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>
