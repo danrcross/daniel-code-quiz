@@ -163,6 +163,8 @@ beginQButton.addEventListener("click", function () {
     attemptScore = 0;
     // reset question number count
     questionNum = 0;
+    // re-instate score form
+    scoreForm.setAttribute("style", "display:flex");
     // set question-page status attribute to "active"
     startquiz.dataset.status = "active";
     // these two lines remove main page from view, and displays the quiz question elements
@@ -198,7 +200,8 @@ function beginCountdown() {
             startquiz.setAttribute("style", "display:none");
             // remove feedback from view
             feedback.setAttribute("style", "display:none");
-            // remove scoreSection from view
+            
+            // display scoreSection 
             scoreSection.setAttribute("style", "display:flex");
             // set text content of final score to "Your score: " followed by user's score
             finalscore.textContent = "Your score: " + attemptScore;
@@ -206,8 +209,10 @@ function beginCountdown() {
             createHighScoreList();
             // display the score page below the user's score/feedback/submission form
             displayScorePage();
+            
             // reset the timer to 60
             resetTimer();
+            
         }
         // this condition would follow from the "Back to Home" button being pressed during the quiz. 
         if (viewScoresButton.dataset.toggle === "view") {
@@ -263,7 +268,7 @@ qResponseList.addEventListener("click", function (event) {
         inCorrect.innerHTML = inCorrect.dataset.correct + "  +5 points!";
         // adds 5 points to user's running score
         attemptScore += 5;
-    // condition met if user does not respond correctly: the response clicked is not equivalent to the correct answer
+        // condition met if user does not respond correctly: the response clicked is not equivalent to the correct answer
     } else {
         // set background color to red (indicates incorrect/bad)
         inCorrect.setAttribute("style", "background-color:var(--red)");
@@ -280,7 +285,7 @@ qResponseList.addEventListener("click", function (event) {
         feedback.setAttribute("style", "display:flex");
         // nextQuestion function is executed, loads next question
         nextQuestion();
-    // condition is met if user has responded to last question. (questionNum would be === 4, so above condition would not be met)
+        // condition is met if user has responded to last question. (questionNum would be === 4, so above condition would not be met)
     } else {
         // set the quiz status to inactive, as last question was answered
         startquiz.dataset.status = "inactive";
