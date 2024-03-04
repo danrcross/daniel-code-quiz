@@ -1,38 +1,71 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width"/>
-        <title>Coding Quiz Challenge</title>
-        <link rel="stylesheet" href="assets/css/style.css"/>
-    </head>
-    <body>
-        <header>
-            <p id="score-link">View High Scores</p>
-            <p id="time-counter">Time: 60</p>
-        </header>
-        <section id="main-page">
-            <h1 id="main-title">Coding Quiz Challenge</h1>
-            <p id="description">A timed and scored challenge to test your JavaScript knowledge.</p>
-            <button id="begin">Begin Quiz</button>
-        </section>
-        <section id="question-page">
-            <h2 id="quiz-question" data-q1="2+2=?" data-q1a="4" data-q2="3+3=?" data-q2a="6" data-q3="4+4=?" data-q3a="8"> </h2>
-            <ol id="response-items">
-                <li id="item1" data-q1="1" data-q2="2" data-q3="2"> </li>
-                <li id="item2" data-q1="2" data-q2="4" data-q3="4"> </li>
-                <li id="item3" data-q1="3" data-q2="6" data-q3="6"> </li>
-                <li id="item4" data-q1="4" data-q2="8" data-q3="8"> </li>
-            </ol>
-        </section>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Coding Quiz Challenge</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+    <header>
+        <p id="score-link" data-toggle="view">View High Scores</p>
+        <p id="time-counter">Time: 60</p>
+    </header>
+    <section id="main-page">
+        <h1 id="main-title">Coding Quiz Challenge</h1>
+        <p id="description">A timed and scored challenge to test your JavaScript knowledge.</p>
+        <button id="begin" class="button">Begin Quiz</button>
+    </section>
+    <!-- used https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures for question inspiration -->
+    <section id="question-page">
+        <h2 id="quiz-question"
+            data-q1="The JavaScript language accomplishes which fundamental aspect of web development?"
+            data-q1a="Functionality" data-q2="Which of the following is NOT a JavaScript data type?"
+            data-q2a="Signifier" data-q3="The 'strict equality' === operator tests for what?"
+            data-q3a="To see if two values are equal and of the same data type"
+            data-q4="What is the code structure that listens for some activity in the browser?" data-q4a="Event handler"
+            data-q5="What kind of Boolean value will an empty array return if tested?" data-q5a="True"> </h2>
+        <ol id="response-items">
+            <li id="item1" class="answer" data-q1="Design" data-q2="String"
+                data-q3="To see if two variables contain the same type of data" data-q4="Event handler" data-q5="True">
+            </li>
+            <li id="item2" class="answer" data-q1="Structure" data-q2="Signifier"
+                data-q3="To see if two values contain the same type of data" data-q4="Function" data-q5="Positive">
+            </li>
+            <li id="item3" class="answer" data-q1="Functionality" data-q2="Boolean"
+                data-q3="To see if two number values are equivalent" data-q4="Variable" data-q5="False"> </li>
+            <li id="item4" class="answer" data-q1="Accessibility" data-q2="Array"
+                data-q3="To see if two values are equal and of the same data type" data-q4="For loop"
+                data-q5="Negative"> </li>
+        </ol>
+    </section>
+    <div id="wrap-score-stuff">
         <section id="score">
             <h2> Great work!</h2>
-            <h3 id="finalscore"></h3>
+            <div id="score-data">
+                <h3 id="finalscore"></h3>
+                <form id="scoreform">
+                    <div id="save-item">
+                        <label for="initials">Initial Here:</label>
+                        <input type="text" name="initials" id="initials" placeholder="HCJ" maxlength="3"/>
+                    </div>
+                    <button id="savescore" class="button">Save Score</button>
+                </form>
+            </div>
         </section>
         <section id="feedback">
             <h3 id="in-correct" data-correct="Correct!" data-incorrect="Incorrect!"></h3>
-        </section>          
+        </section>
+        <section id="score-page">
+            <h2>High Scores:</h2>
+            <ol id="scorelist">
+            </ol>
+            <button id="clear-scores" class="button">Clear High Scores</button>
+        </section>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
 
-        <script src="assets/js/script.js"></script>
-    </body>
 </html>
